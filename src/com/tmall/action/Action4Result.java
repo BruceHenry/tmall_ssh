@@ -27,8 +27,16 @@ import org.apache.struts2.convention.annotation.Results;
             /*产品图片管理*/
             @Result(name="listProductImage", location="/admin/listProductImage.jsp"),
             @Result(name="listProductImagePage", type = "redirect", location="/admin_productImage_list?product.id=${productImage.product.id}"),
-             
             
+            /*属性值管理*/
+            @Result(name="editPropertyValue", location="/admin/editPropertyValue.jsp"),
+            
+            /*用户管理*/
+            @Result(name="listUser",location="/admin/listUser.jsp"),
+            
+            /*订单管理*/
+            @Result(name="listOrder", location="/admin/listOrder.jsp"),
+            @Result(name="listOrderPage", type = "redirect", location="/admin_order_list"),
 		})
 
 
