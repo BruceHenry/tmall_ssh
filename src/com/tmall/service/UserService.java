@@ -1,5 +1,9 @@
 package com.tmall.service;
 
-public interface UserService extends BaseService {
+import com.tmall.pojo.User;
 
+public interface UserService extends BaseService {
+	boolean isExist(String name);
+
+	User get(String name, String password);
 }

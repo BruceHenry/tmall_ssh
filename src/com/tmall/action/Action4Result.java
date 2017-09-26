@@ -37,9 +37,32 @@ import org.apache.struts2.convention.annotation.Results;
             /*订单管理*/
             @Result(name="listOrder", location="/admin/listOrder.jsp"),
             @Result(name="listOrderPage", type = "redirect", location="/admin_order_list"),
+            
+            /*前台 服务端跳转*/
+            @Result(name="home.jsp", location="/home.jsp"),
+            @Result(name="register.jsp", location="/register.jsp"),
+            @Result(name="login.jsp", location="/login.jsp"),
+            @Result(name="product.jsp", location="/product.jsp"),
+            @Result(name="category.jsp", location="/category.jsp"),
+            @Result(name="searchResult.jsp", location="/searchResult.jsp"),
+            @Result(name="buy.jsp", location="/buy.jsp"),
+            @Result(name="cart.jsp", location="/cart.jsp"),
+            @Result(name="alipay.jsp", location="/alipay.jsp"),
+            @Result(name="payed.jsp", location="/payed.jsp"),
+            @Result(name="bought.jsp", location="/bought.jsp"),
+            @Result(name="confirmPay.jsp", location="/confirmPay.jsp"),
+            @Result(name="orderConfirmed.jsp", location="/orderConfirmed.jsp"),
+            @Result(name="review.jsp", location="/review.jsp"),
+             
+            /*前台 客户端跳转*/
+            @Result(name="registerSuccessPage", type = "redirect", location="/registerSuccess.jsp"),
+            @Result(name="homePage", type = "redirect", location="forehome"),
+            @Result(name="buyPage", type = "redirect", location="forebuy?oiids=${oiid}"),
+            @Result(name="alipayPage", type = "redirect", location="forealipay?order.id=${order.id}&total=${total}"),
+            @Result(name="reviewPage", type = "redirect", location="forereview?order.id=${order.id}&showonly=${showonly}"),
 		})
 
 
-public class Action4Result extends Action4Service {
+public class Action4Result extends Action4Parameter {
 
 }

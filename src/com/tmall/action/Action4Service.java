@@ -12,6 +12,7 @@ import com.tmall.service.ProductImageService;
 import com.tmall.service.ProductService;
 import com.tmall.service.PropertyService;
 import com.tmall.service.PropertyValueService;
+import com.tmall.service.ReviewService;
 import com.tmall.service.UserService;
 
 public class Action4Service extends Action4Pojo {
@@ -31,6 +32,8 @@ public class Action4Service extends Action4Pojo {
 	OrderService orderService;
 	@Autowired
 	OrderItemService orderItemService;
+	@Autowired
+	ReviewService reviewService; 
 
 	/**
 	 * transient to presistent 瞬时对象转换为持久对象
