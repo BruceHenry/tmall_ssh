@@ -4,9 +4,23 @@
     "http://struts.apache.org/dtds/struts-2.0.dtd">
 
 <struts>
-  <constant name="struts.i18n.encoding" value="UTF-8"></constant>
-  <constant name="struts.objectFactory" value="spring"/>
-  <package name="basicstruts" extends="struts-default">
-      
- </package>
- </struts>
+	<constant name="struts.i18n.encoding" value="UTF-8"></constant>
+	<constant name="struts.objectFactory" value="spring" />
+	<package name="basicstruts" extends="struts-default">
+		<interceptors>
+			<interceptor name="authorityInterceptor" class="com.tmall.interceptor.AuthInterceptor"></interceptor>
+			<interceptor name="categoryNamesBelowSearchInterceptor" class="com.tmall.interceptor.CategoryNamesBelowSearchInterceptor"></interceptor>
+			<interceptor name="cartTotalItemNumberInterceptor" class="com.tmall.interceptor.CartTotalItemNumberInterceptor"></interceptor>    
+                
+				<!-- 拦截器栈 -->
+				<interceptor-stack name="auth-default">
+					<interceptor-ref name="authorityInterceptor"></interceptor-ref>
+					<interceptor-ref name="categoryNamesBelowSearchInterceptor"></interceptor-ref>
+					<interceptor-ref name="cartTotalItemNumberInterceptor"></interceptor-ref>
+					<interceptor-ref name="defaultStack"></interceptor-ref>
+				</interceptor-stack>
+
+		</interceptors>
+		<default-interceptor-ref name="auth-default"></default-interceptor-ref>
+	</package>
+</struts>

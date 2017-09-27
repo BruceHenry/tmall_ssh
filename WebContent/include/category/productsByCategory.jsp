@@ -6,7 +6,6 @@
 <c:if test="${empty param.categorycount}">
 	<c:set var="categorycount" scope="page" value="100"/>
 </c:if>
-
 <c:if test="${!empty param.categorycount}">
 	<c:set var="categorycount" scope="page" value="${param.categorycount}"/>
 </c:if>
@@ -27,7 +26,7 @@
 				<a  class="tmallLink" href="foreproduct?product.id=${p.id}">天猫专卖</a>
 	
 				<div class="show1 productInfo">
-					<span class="monthDeal ">月成�? <span class="productDealNumber">${p.saleCount}�?</span></span>
+					<span class="monthDeal ">月成交 <span class="productDealNumber">${p.saleCount}笔</span></span>
 					<span class="productReview">评价<span class="productReviewNumber">${p.reviewCount}</span></span>
 					<span class="wangwang">
 					<a class="wangwanglink" href="#nowhere">

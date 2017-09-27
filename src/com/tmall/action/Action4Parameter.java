@@ -1,5 +1,7 @@
 package com.tmall.action;
 
+import org.apache.struts2.ServletActionContext;
+
 public class Action4Parameter extends Action4Service {
 	//错误信息
 	protected String msg;
@@ -25,6 +27,10 @@ public class Action4Parameter extends Action4Service {
      
     //在进行评论的页面，是否只显示评论记录，而不提供输入
     protected boolean showonly;
+    
+    public Action4Parameter(){
+    	contextPath =ServletActionContext.getServletContext().getContextPath();
+    }
 
 	public String getMsg() {
 		return msg;

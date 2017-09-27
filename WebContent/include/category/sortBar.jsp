@@ -1,6 +1,3 @@
-<!-- Ä£·ÂÌìÃ¨ÕûÕ¾j2ee ½Ì³Ì Îªhow2j.cn °æÈ¨ËùÓĞ-->
-<!-- ±¾½Ì³Ì½öÓÃÓÚÑ§Ï°Ê¹ÓÃ£¬ÇĞÎğÓÃÓÚ·Ç·¨ÓÃÍ¾£¬ÓÉ´ËÒıÆğÒ»ÇĞºó¹ûÓë±¾Õ¾ÎŞ¹Ø-->
-<!-- ¹©¹ºÂòÕßÑ§Ï°£¬ÇëÎğË½×Ô´«²¥£¬·ñÔò×ÔĞĞ³Ğµ£Ïà¹Ø·¨ÂÉÔğÈÎ-->
 
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8" isELIgnored="false"%>
@@ -49,7 +46,7 @@ $(function(){
 			<td <c:if test="${'all'==param.sort||empty param.sort}">class="grayColumn"</c:if> ><a href="?category.id=${category.id}&sort=all">ç»¼åˆ<span class="glyphicon glyphicon-arrow-down"></span></a></td>
 			<td <c:if test="${'review'==param.sort}">class="grayColumn"</c:if> ><a href="?category.id=${category.id}&sort=review">äººæ°”<span class="glyphicon glyphicon-arrow-down"></span></a></td>
 			<td <c:if test="${'date'==param.sort}">class="grayColumn"</c:if>><a href="?category.id=${category.id}&sort=date">æ–°å“<span class="glyphicon glyphicon-arrow-down"></span></a></td>
-			<td <c:if test="${'saleCount'==param.sort}">class="grayColumn"</c:if>><a href="?category.id=${category.id}&sort=saleCount">é”?é‡?<span class="glyphicon glyphicon-arrow-down"></span></a></td>
+			<td <c:if test="${'saleCount'==param.sort}">class="grayColumn"</c:if>><a href="?category.id=${category.id}&sort=saleCount">é”€é‡<span class="glyphicon glyphicon-arrow-down"></span></a></td>
 			<td <c:if test="${'price'==param.sort}">class="grayColumn"</c:if>><a href="?category.id=${category.id}&sort=price">ä»·æ ¼<span class="glyphicon glyphicon-resize-vertical"></span></a></td>
 		</tr>
 	</table>
@@ -58,9 +55,9 @@ $(function(){
 	
 	<table class="categorySortBarTable">
 		<tr>
-			<td><input class="sortBarPrice beginPrice" type="text" placeholder="è¯·è¾“å…?"></td>
+			<td><input class="sortBarPrice beginPrice" type="text" placeholder="è¯·è¾“å…¥"></td>
 			<td class="grayColumn priceMiddleColumn">-</td>
-			<td><input class="sortBarPrice endPrice" type="text" placeholder="è¯·è¾“å…?"></td>
+			<td><input class="sortBarPrice endPrice" type="text" placeholder="è¯·è¾“å…¥"></td>
 		</tr>
 	</table>
 
