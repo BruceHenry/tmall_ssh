@@ -1,13 +1,9 @@
-<!-- Ä£·ÂÌìÃ¨ÕûÕ¾j2ee ½Ì³Ì Îªhow2j.cn °æÈ¨ËùÓÐ-->
-<!-- ±¾½Ì³Ì½öÓÃÓÚÑ§Ï°Ê¹ÓÃ£¬ÇÐÎðÓÃÓÚ·Ç·¨ÓÃÍ¾£¬ÓÉ´ËÒýÆðÒ»ÇÐºó¹ûÓë±¾Õ¾ÎÞ¹Ø-->
-<!-- ¹©¹ºÂòÕßÑ§Ï°£¬ÇëÎðË½×Ô´«²¥£¬·ñÔò×ÔÐÐ³Ðµ£Ïà¹Ø·¨ÂÉÔðÈÎ-->
-
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8" isELIgnored="false"%>
-	
+    pageEncoding="UTF-8" isELIgnored="false"%>
+     
 <div class="orderFinishDiv">
-	<div class="orderFinishTextDiv">
-		<img src="img/site/orderFinish.png">
-		<span>äº¤æ˜“å·²ç»æˆåŠŸï¼Œå–å®¶å°†æ”¶åˆ°æ‚¨çš„è´§æ¬¾ã€?</span>
-	</div>
+    <div class="orderFinishTextDiv">
+        <img src="img/site/orderFinish.png">
+        <span>äº¤æ˜“å·²ç»æˆåŠŸï¼Œå–å®¶å°†æ”¶åˆ°æ‚¨çš„è´§æ¬¾ã€‚</span>
+    </div>
 </div>

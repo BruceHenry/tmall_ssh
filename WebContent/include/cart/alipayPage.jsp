@@ -1,29 +1,24 @@
-<!-- Ä£·ÂÌìÃ¨ÕûÕ¾j2ee ½Ì³Ì Îªhow2j.cn °æÈ¨ËùÓÐ-->
-<!-- ±¾½Ì³Ì½öÓÃÓÚÑ§Ï°Ê¹ÓÃ£¬ÇÐÎðÓÃÓÚ·Ç·¨ÓÃÍ¾£¬ÓÉ´ËÒýÆðÒ»ÇÐºó¹ûÓë±¾Õ¾ÎÞ¹Ø-->
-<!-- ¹©¹ºÂòÕßÑ§Ï°£¬ÇëÎðË½×Ô´«²¥£¬·ñÔò×ÔÐÐ³Ðµ£Ïà¹Ø·¨ÂÉÔðÈÎ-->
-
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8" isELIgnored="false"%>
-	
+    pageEncoding="UTF-8" isELIgnored="false"%>
+     
 <div class="aliPayPageDiv">
-	<div class="aliPayPageLogo">
-		<img class="pull-left" src="img/site/simpleLogo.png">
-		<div style="clear:both"></div>
-	</div>
-	
-	<div>
-		<span class="confirmMoneyText">æ‰«ä¸€æ‰«ä»˜æ¬¾ï¼ˆå…ƒï¼‰</span>
-		<span class="confirmMoney">
-		ï¿?<fmt:formatNumber type="number" value="${param.total}" minFractionDigits="2"/></span>
-		
-	</div>
-	<div>
-		<img class="aliPayImg" src="img/site/alipay2wei.png">
-	</div>
-
-	
-	<div>
-		<a href="forepayed?order.id=${order.id}&total=${param.total}"><button class="confirmPay">ç¡®è®¤æ”¯ä»˜</button></a>
-	</div>
-
+    <div class="aliPayPageLogo">
+        <img class="pull-left" src="img/site/simpleLogo.png">
+        <div style="clear:both"></div>
+    </div>
+     
+    <div>
+        <span class="confirmMoneyText">æ‰«ä¸€æ‰«ä»˜æ¬¾ï¼ˆå…ƒï¼‰</span>
+        <span class="confirmMoney">
+        ï¿¥<fmt:formatNumber type="number" value="${param.total}" minFractionDigits="2"/></span>
+         
+    </div>
+    <div>
+        <img class="aliPayImg" src="img/site/alipay2wei.png">
+    </div>
+ 
+    <div>
+        <a href="forepayed?order.id=${order.id}&total=${param.total}"><button class="confirmPay">ç¡®è®¤æ”¯ä»˜</button></a>
+    </div>
+ 
 </div>

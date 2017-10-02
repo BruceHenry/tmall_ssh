@@ -1,9 +1,12 @@
 package com.tmall.action;
 
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.Date;
 import java.util.List;
 
+import org.apache.commons.lang.xwork.math.RandomUtils;
 import org.apache.struts2.convention.annotation.Action;
 import org.springframework.web.util.HtmlUtils;
 
@@ -16,10 +19,125 @@ import com.tmall.comparator.ProductSaleCountComparator;
 import com.tmall.pojo.OrderItem;
 import com.tmall.pojo.Product;
 import com.tmall.pojo.User;
+import com.tmall.service.OrderService;
 import com.tmall.service.ProductImageService;
 
 public class ForeAction extends Action4Result {
 	String msg;
+	
+	@Action("foredoreview")
+	public String doreview(){
+		t2p(order);
+		t2p(product);
+		
+		order.setStatus(OrderService.finish);
+		String content =review.getContent();
+		content =HtmlUtils.htmlEscape(content);
+		review.setContent(content);
+		
+		User user = (User) ActionContext.getContext().getSession().get("user");
+		review.setContent(content);
+		review.setProduct(product);
+		review.setCreateDate(new Date());
+		review.setUser(user);
+		reviewService.saveReviewAndUpdateOrderStatus(review,order);
+	      
+	    showonly = true;
+	    return "reviewPage";
+	}
+	
+	@Action("forereview")
+	public String review(){
+		t2p(order);
+		orderItemService.fill(order);
+		product =order.getOrderItems().get(0).getProduct();
+		reviews =reviewService.listByParent(product);
+		productService.setSaleAndReviewNumber(product);
+		return "review.jsp";
+	}
+	
+	@Action("foredeleteOrder")
+	public String deleteOrder(){
+		t2p(order);
+		order.setStatus(OrderService.delete);
+		orderService.update(order);
+		return "success.jsp";
+	}
+	
+	@Action("foreorderConfirmed")
+	public String orderConfirmed(){
+		t2p(order);
+		order.setStatus(OrderService.waitReview);
+		order.setConfirmDate(new Date());
+		orderService.update(order);
+		return "orderConfirmed.jsp";
+	}
+	
+	@Action("foreconfirmPay")
+	public String confirmPay(){
+		t2p(order);
+		orderItemService.fill(order);
+		return "confirmPay.jsp";
+	}
+	
+	@Action("forebought")
+	public String bought(){
+		User user = (User) ActionContext.getContext().getSession().get("user");
+		orders =orderService.listByUserWithoutDelete(user);
+		orderItemService.fill(orders);
+		return "bought.jsp";
+	}
+	
+	@Action("forepayed")
+	public String payed(){
+		t2p(order);
+		order.setStatus(OrderService.waitDelivery);
+		order.setPayDate(new Date());
+		orderService.update(order);
+		return "payed.jsp";
+	}
+	
+	@Action("forealipay")
+	public String forealipay(){
+		return "alipay.jsp";
+	}
+	
+	@Action("forecreateOrder")
+	public String createOrder(){
+		List<OrderItem> ois =(List<OrderItem>)ActionContext.getContext().getSession().get("orderItems");
+		if(ois.isEmpty())
+			return "login.jsp";
+		User user =(User) ActionContext.getContext().getSession().get("user");
+		String orderCode =new SimpleDateFormat("yyyyMMddHHmmssSSS").format(new Date())
+				+RandomUtils.nextInt(10000);
+		order.setOrderCode(orderCode);
+		order.setCreateDate(new Date());
+		order.setUser(user);
+		order.setStatus(OrderService.waitPay);
+		
+		total = orderService.createOrder(order, ois);
+		return "alipayPage";
+	}
+	
+	@Action("foredeleteOrderItem")
+	public String deleteOrderItem(){
+		orderItemService.delete(orderItem);
+		return "success.jsp";
+	}
+	
+	@Action("forechangeOrderItem")
+	public String changeOrderItem(){
+		User user = (User) ActionContext.getContext().getSession().get("user");
+		List<OrderItem>ois =orderItemService.list("user",user,"order",null);
+		for (OrderItem oi :ois){
+			if(oi.getProduct().getId()==product.getId()){
+				oi.setNumber(num);
+				orderItemService.update(oi);
+				break;
+			}
+		}
+		return "success.jsp";
+	}
 	
 	@Action("forecart")
 	public String cart(){
