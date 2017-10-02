@@ -27,7 +27,6 @@
 	<classpathentry kind="lib" path="WebContent/WEB-INF/lib/junit-4.12.jar"/>
 	<classpathentry kind="lib" path="WebContent/WEB-INF/lib/log4j-1.2.14.jar"/>
 	<classpathentry kind="lib" path="WebContent/WEB-INF/lib/mysql-connector-java-5.0.8-bin.jar"/>
-	<classpathentry kind="lib" path="WebContent/WEB-INF/lib/mysql-connector-java-5.1.18-bin.jar"/>
 	<classpathentry kind="lib" path="WebContent/WEB-INF/lib/ognl-3.0.jar"/>
 	<classpathentry kind="lib" path="WebContent/WEB-INF/lib/servlet-api.jar"/>
 	<classpathentry kind="lib" path="WebContent/WEB-INF/lib/slf4j-api-1.7.24.jar"/>
